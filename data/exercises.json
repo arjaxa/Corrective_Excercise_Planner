@@ -1,0 +1,21 @@
+[
+  {
+    "id": "doorway_pec_stretch",
+    "name": "Doorway Pec Stretch",
+    "category": "stretch",
+    "target_muscle": "pectoralis_major",
+    "target_role": "overactive",
+    "equipment": "doorway",
+    "has_hold": true,
+    "hold_options_seconds": [20, 30, 60],
+    "rep_options": [],
+    "set_options": [1, 2],
+    "tempo": null,
+    "difficulty": "beginner",
+    "instructions": [
+      "Stand in a doorway with your forearm against the door frame.",
+      "Step forward gently until a stretch is felt across the chest.",
+      "Maintain a controlled position without forcing the stretch."
+    ]
+  }
+]

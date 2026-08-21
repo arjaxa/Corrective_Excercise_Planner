@@ -1,0 +1,62 @@
+{
+  "forward_head": {
+    "name": "Forward Head Posture",
+    "overactive_muscles": [
+      "sternocleidomastoid",
+      "upper_trapezius",
+      "levator_scapulae",
+      "suboccipitals",
+      "scalene"
+    ],
+    "underactive_muscles": [
+      "deep_cervical_flexors",
+      "lower_trapezius",
+      "cervical_erector_spinae",
+      "rhomboids"
+    ]
+  },
+
+  "lower_crossed_syndrome": {
+    "name": "Lower Crossed Syndrome",
+    "overactive_muscles": [
+      "gastrocnemius",
+      "soleus",
+      "hip_flexor_complex",
+      "adductors",
+      "latissimus_dorsi",
+      "cervical_erector_spinae"
+    ],
+    "underactive_muscles": [
+      "gluteus_maximus",
+      "gluteus_medius",
+      "transversus_abdominis",
+      "anterior_tibialis",
+      "posterior_tibialis",
+      "internal_obliques"
+    ]
+  },
+
+  "upper_crossed_syndrome": {
+    "name": "Upper Crossed Syndrome",
+    "overactive_muscles": [
+      "pectoralis_major",
+      "pectoralis_minor",
+      "upper_trapezius",
+      "levator_scapulae",
+      "sternocleidomastoid",
+      "scalene",
+      "latissimus_dorsi",
+      "teres_major",
+      "subscapularis"
+    ],
+    "underactive_muscles": [
+      "deep_cervical_flexors",
+      "middle_trapezius",
+      "lower_trapezius",
+      "serratus_anterior",
+      "rhomboids",
+      "teres_minor",
+      "infraspinatus"
+    ]
+  }
+}

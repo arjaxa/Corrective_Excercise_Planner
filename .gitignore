@@ -1,12 +1,15 @@
-
 .venv/
 venv/
 env/
 
 __pycache__/
 *.py[cod]
+*$py.class
+*.pyo
+*.pyd
 
 .ipynb_checkpoints/
+
 
 .vscode/
 .idea/
@@ -14,20 +17,31 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
+
 *.egg-info/
+dist/
+build/
 
 *.log
 
 .env
 .env.*
+!.env.example
 
 
+datasets/
+data/raw/
+data/train/
+data/validation/
+data/test/
 
-*.h5
-*.keras
-*.pkl
-*.joblib
-*.onnx
-
-*.tmp
 *.temp
+
+*.png
+*.jpg
+*.jpeg
+
+
+checkpoint/
+checkpoints/
+logs/

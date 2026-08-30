@@ -9027,7 +9027,7 @@
 ]
 },
 {
-"id": "middle_trapezius_chest_supported_row",
+"id": "middle_trapezius_chest_supported_row_a",
 "name": "Chest-Supported Dumbbell Row",
 "category": "activation",
 "target_muscle": "middle_trapezius",
@@ -9218,7 +9218,7 @@
 ]
 },
 {
-"id": "serratus_anterior_cable_punch",
+"id": "serratus_anterior_cable_punch_a",
 "name": "Cable Serratus Punch",
 "category": "activation",
 "target_muscle": "serratus_anterior",
@@ -13646,7 +13646,7 @@
   },
 
   {
-    "id": "rhomboids_cable_row",
+    "id": "rhomboids_cable_row_seated",
     "name": "Seated Cable Row",
     "category": "integration",
     "target_muscle": "rhomboids",
@@ -15173,7 +15173,7 @@
   },
 
   {
-    "id": "middle_trapezius_cable_row",
+    "id": "middle_trapezius_cable_row_seated",
     "name": "Seated Cable Row",
     "category": "integration",
     "target_muscle": "middle_trapezius",
@@ -15211,7 +15211,7 @@
     ]
   },
   {
-    "id": "middle_trapezius_single_arm_row",
+    "id": "middle_trapezius_single_arm_row_db",
     "name": "Single-Arm Dumbbell Row",
     "category": "integration",
     "target_muscle": "middle_trapezius",

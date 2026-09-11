@@ -5,6 +5,7 @@ from pathlib import Path
 from tensorflow.keras.models import load_model
 from planner import generate_plan
 
+st.write("APP IS RUNNING")
 
 st.set_page_config(
     page_title="Corrective Exercise Planner",

@@ -1,5 +1,8 @@
 import streamlit as st
-
+import numpy as np
+from PIL import Image
+from pathlib import Path
+from tensorflow.keras.models import load_model
 from planner import generate_plan
 
 
@@ -72,10 +75,108 @@ posture_options = {
 }
 
 
-selected_posture = st.selectbox(
-    "Select Posture Issue",
-    list(posture_options.keys())
+st.subheader("Posture Assessment Method")
+
+method = st.radio(
+    "Choose how to identify the posture issue:",
+    [
+        "Computer Vision Screening",
+        "Manual Selection"
+    ],
+    horizontal=True
 )
+
+
+selected_posture = None
+
+
+if method == "Computer Vision Screening":
+
+    st.caption(
+        "Experimental screening prototype — "
+        "identifies normal posture vs. possible postural deviation."
+    )
+
+    uploaded_file = st.file_uploader(
+        "Upload a posture image",
+        type=["jpg", "jpeg", "png"]
+    )
+
+    if uploaded_file is not None:
+
+        image = Image.open(
+            uploaded_file
+        ).convert("RGB")
+
+        st.image(
+            image,
+            caption="Uploaded posture image",
+            width=400
+        )
+
+        model_path = (
+            Path(__file__).resolve().parent.parent
+            / "models"
+            / "binary_posture_classifier.keras"
+        )
+
+        try:
+
+            model = load_model(model_path)
+
+            resized_image = image.resize(
+                (160, 160)
+            )
+
+            image_array = np.array(
+                resized_image,
+                dtype=np.float32
+            )
+
+            image_array = np.expand_dims(
+                image_array,
+                axis=0
+            )
+
+            prediction = float(
+                model.predict(
+                    image_array,
+                    verbose=0
+                )[0][0]
+            )
+
+            if prediction >= 0.5:
+
+                st.warning(
+                    f"Possible postural deviation detected "
+                    f"({prediction * 100:.1f}% model score)."
+                )
+
+            else:
+
+                st.success(
+                    f"No clear postural deviation detected "
+                    f"({(1 - prediction) * 100:.1f}% model score)."
+                )
+
+            selected_posture = st.selectbox(
+                "Select the suspected posture issue",
+                list(posture_options.keys())
+            )
+
+        except Exception as error:
+
+            st.error(
+                f"Unable to run the posture screening model: {error}"
+            )
+
+
+else:
+
+    selected_posture = st.selectbox(
+        "Select Posture Issue",
+        list(posture_options.keys())
+    )
 
 
 generate = st.button(
@@ -206,6 +307,14 @@ def display_phase(phase):
 
 
 if generate:
+
+    if selected_posture is None:
+
+        st.warning(
+            "Please select a posture issue before generating the plan."
+        )
+
+        st.stop()
 
     posture_key = posture_options[
         selected_posture
